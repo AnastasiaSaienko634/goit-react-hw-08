@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.text {
+  margin-top: 50px;
+  margin-bottom: 7px;
+}
+
+.span {
+  font-weight: bolder;
+  color: #007bff;
+}
+
+.textHome {
+  margin-top: 30px;
+}

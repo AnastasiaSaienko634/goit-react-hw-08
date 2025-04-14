@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  margin-top: 70px;
+  font-size: 18px;
+}
+
+.haeder {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.icons {
+  width: 45px;
+  height: 45px;
+  fill: #0056b3;
+}

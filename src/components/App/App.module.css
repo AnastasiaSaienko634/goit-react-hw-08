@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  fill: rgb(255, 58, 196);
+  width: 50px;
+  height: 50px;
+}
+
+.errorMessaga {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.loader {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.linksList {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  background-color: #007bff;
+  font-weight: 600;
+  border: 1px solid;
+  border-radius: 15px;
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  transition: background-color 1s ease-in-out;
+}
+
+.link:hover {
+  background-color: #0056b3;
+}
+
+.link:focus {
+  background-color: #0056b3;
+}

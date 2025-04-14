@@ -2,10 +2,7 @@ import css from "./ContactForm.module.css";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { MdDriveFileRenameOutline } from "react-icons/md";
-import { IoMdPersonAdd } from "react-icons/io";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 
 export default function ContactForm() {
   const dispatch = useDispatch();

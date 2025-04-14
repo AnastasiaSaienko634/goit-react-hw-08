@@ -1,20 +1,5 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./contactsOps";
-import { selectNameFilter } from "./filtersSlice";
-
-export const selectContacts = (state) => state.contacts.items;
-export const selectLoading = (state) => state.contacts.loading;
-export const selectError = (state) => state.contacts.error;
-
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectNameFilter],
-  (items, name) => {
-    const filtredName = name.toLowerCase().trim();
-    return items.filter((contact) =>
-      contact.name.toLowerCase().includes(filtredName)
-    );
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchContacts, addContact, deleteContact } from "./operations";
 
 const contactsSlice = createSlice({
   name: "contacts",
@@ -23,7 +8,8 @@ const contactsSlice = createSlice({
     loading: false,
     error: null,
   },
-  extraReducers: (builder) => { // дозволяє обробляти асинхронні дії або зовнішні 
+  extraReducers: (builder) => {
+    // дозволяє обробляти асинхронні дії або зовнішні
     builder
       .addCase(fetchContacts.pending, (state, action) => {
         state.loading = true;

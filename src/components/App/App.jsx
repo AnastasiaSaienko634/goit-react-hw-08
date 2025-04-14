@@ -1,42 +1,33 @@
 import css from "./App.module.css";
-import SearchBox from "../SearchBox/SearchBox";
-import ContactList from "../ContactList/ContactList";
-import ContactForm from "../ContactForm/ContactForm";
-import { IoIosPhonePortrait } from "react-icons/io";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps";
-import { selectLoading, selectError } from "../../redux/contactsSlice";
-import { PiSmileySadThin } from "react-icons/pi";
-import { Routes, Route, NavLink } from "react-router-dom";
-import ContactsHomePage from "../../pages/ContactsHomePage/ContactsHomePage";
+import { Routes, Route } from "react-router-dom";
+import ContactsHomePage from "../../pages/ContactHomePage/ContactsHomePage";
 import ContactsListPage from "../../pages/ContactListPage/ContactsListPage";
 import AddContactPage from "../../pages/AddContactPage/AddContactPage";
+import RegisterPage from "../../pages/RegisterPage/RegisterPage";
+import LoginPage from "../../pages/LoginPage/LoginPage";
+import { useSelector } from "react-redux";
+import { isLogged } from "../../redux/auth/selectors";
+import AppBar from "../AppBar/AppBar";
 export default function App() {
+  const isLoggedIn = useSelector(isLogged);
   return (
     <>
-      <div>
-        <nav className={css.linksList}>
-          <NavLink to="/" className={css.link}>
-            Home
-          </NavLink>
-          <NavLink to="/contactslist" className={css.link}>
-            Contacts List
-          </NavLink>
-          <NavLink to="/addcontact" className={css.link}>
-            Add New Contact
-          </NavLink>
-        </nav>
+      <AppBar />
+      <Routes>
+        <Route path="/" element={<ContactsHomePage />} />
+        <Route path="/contactslist" element={<ContactsListPage />} />
+        <Route path="/addcontact" element={<AddContactPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="*" element={<ContactsHomePage />} />
+      </Routes>
 
-        <main className={css.mainContent}>
-          <Routes>
-            <Route path="/" element={<ContactsHomePage />} />
-            <Route path="/contactslist" element={<ContactsListPage />} />
-            <Route path="/addcontact" element={<AddContactPage />} />
-            <Route path="*" element={<ContactsHomePage />} />
-          </Routes>
-        </main>
-      </div>
+      {/* <Route
+        path="/login"
+        element={
+          <RestrictedRoute redirectTo="/dashboard" component={LoginPage} />
+        }
+      /> */}
       {/* <div>
         <h1 className={css.header}>
           <IoIosPhonePortrait className={css.icon} />

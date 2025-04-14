@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  gap: 20px; /* Отступы между Navigation и UserMenu/AuthNav */
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}

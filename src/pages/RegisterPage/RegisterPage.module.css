@@ -5,21 +5,12 @@
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
-  margin-top: 47px;
+  margin-top: 50px;
   font-size: 18px;
 }
 
 .icon {
-  fill: #0056b3;
   width: 29px;
-  margin-left: 3px;
   height: 29px;
-}
-
-.haeder {
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  fill: #0056b3;
 }

@@ -1,14 +1,14 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://67f584dd913986b16fa4db34.mockapi.io";
+axios.defaults.baseURL = "https://connections-api.goit.global/";
 
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll", //пишемо назву екшена це fetchAll
   async (_, thunkAPI) => {
     //асинхронна операція
     try {
-      const response = await axios.get("contacts"); //забираємо данні з сервера методом get
+      const response = await axios.get("/contacts"); //забираємо данні з сервера методом get
       return response.data; //асинхронний запрос, data це результат від серверу
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -18,9 +18,9 @@ export const fetchContacts = createAsyncThunk(
 
 export const addContact = createAsyncThunk(
   "contacts/addContact",
-  async (information, thunkAPI) => {
+  async (contact, thunkAPI) => {
     try {
-      const response = await axios.post("/contacts", information);
+      const response = await axios.post("/contacts/", { contact });
       return response.data; //сервер повертає контакти вже з id
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

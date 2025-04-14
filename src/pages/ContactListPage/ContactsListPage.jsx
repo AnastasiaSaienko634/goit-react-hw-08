@@ -1,9 +1,8 @@
 import css from "./ContactListPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps";
-import { selectLoading, selectError } from "../../redux/contactsSlice";
-import ContactForm from "../../components/ContactForm/ContactForm";
+import { fetchContacts } from "../../redux/contacts/operations";
+import { selectLoading, selectError } from "../../redux/contacts/selectors";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ContactList from "../../components/ContactList/ContactList";
 import { IoMdPeople } from "react-icons/io";

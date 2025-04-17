@@ -4,12 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { PiFinnTheHuman } from "react-icons/pi";
 import { IoIosLogOut } from "react-icons/io";
 import { logout } from "../../redux/auth/operations";
+import { useNavigate } from "react-router-dom";
 
 export default function UserMenu() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const name = useSelector(username);
-  const handleClick = (event) => {
+  const handleClick = () => {
     dispatch(logout());
+
+    navigate("/");
   };
   return (
     <>

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchContacts, addContact, deleteContact } from "./operations";
-
+import { logout } from "../auth/operations";
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: {
@@ -48,31 +48,11 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.items = [];
       });
   },
 });
 
 export default contactsSlice.reducer;
-
-// reducers: {
-//   fetchInProgress(state) {
-//     state.isLoading = true;
-//   },
-//   fetchSuccess(state, action) {
-//     state.isLoading = false;
-//     state.error = null;
-//     state.items = action.payload;
-//   },
-//   fetchError(state, action) {
-//     state.isLoading = false;
-//     state.error = action.payload;
-//   },
-//   addContact: (state, action) => {
-//     state.items.push(action.payload); //просто пушимо в масив
-//   },
-//   deleteContact: (state, action) => {
-//     state.items = state.items.filter(
-//       (contact) => contact.id !== action.payload //якщо ід співпадає то він видаляється з списку
-//     );
-//   },
-// },

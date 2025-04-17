@@ -1,12 +1,16 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import css from "./RegistrationForm.module.css";
 import * as Yup from "yup";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { register } from "../../redux/auth/operations";
+import { error } from "../../redux/auth/selectors";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterForm() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleRegisterForm = (values, actions) => {
+  const isError = useSelector(error);
+  const handleRegisterForm = (values, { resetForm }) => {
     dispatch(
       register({
         name: values.name,
@@ -14,6 +18,8 @@ export default function RegisterForm() {
         password: values.password,
       })
     );
+    navigate("/");
+    resetForm();
   };
   const authSchema = Yup.object().shape({
     name: Yup.string().min(3, "Too Short").max(20, "Too Long").required(),
@@ -22,63 +28,73 @@ export default function RegisterForm() {
   });
   return (
     <>
-      <Formik
-        validationSchema={authSchema}
-        initialValues={{
-          name: "",
-          email: "",
-          password: "",
-        }}
-        onSubmit={handleRegisterForm}
-      >
-        <Form className={css.form}>
-          <label htmlFor="name" className={css.formlabel}>
-            <Field
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Name"
-              className={css.formInput}
-            />
-            <ErrorMessage
-              name="name"
-              component="span"
-              className={css.schemaNumber}
-            />
-          </label>
-          <label htmlFor="email" className={css.formlabel}>
-            <Field
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              className={css.formInput}
-            ></Field>
-            <ErrorMessage
-              name="email"
-              component="span"
-              className={css.schemaNumber}
-            />
-            <label htmlFor="password" className={css.formlabel}>
+      <div className={css.container}>
+        <Formik
+          validationSchema={authSchema}
+          initialValues={{
+            name: "",
+            email: "",
+            password: "",
+          }}
+          onSubmit={handleRegisterForm}
+        >
+          <Form className={css.form}>
+            <label htmlFor="name" className={css.formlabel}>
+              Name
               <Field
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Anastasia Medison"
                 className={css.formInput}
               />
               <ErrorMessage
-                name="password"
+                name="name"
                 component="span"
                 className={css.schemaNumber}
               />
             </label>
-            <button type="submit" className={css.formButton}>
-              Confirm registration
-            </button>
-          </label>
-        </Form>
-      </Formik>
+            <label htmlFor="email" className={css.formlabel}>
+              Email
+              <Field
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@email.com"
+                className={css.formInput}
+              ></Field>
+              <ErrorMessage
+                name="email"
+                component="span"
+                className={css.schemaNumber}
+              />
+              <label htmlFor="password" className={css.formlabel}>
+                Password
+                <Field
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="h8937Jks9hjk"
+                  className={css.formInput}
+                />
+                <ErrorMessage
+                  name="password"
+                  component="span"
+                  className={css.schemaNumber}
+                />
+              </label>
+              <button type="submit" className={css.formButton}>
+                Confirm registration
+              </button>
+            </label>
+            {isError && (
+              <p className={css.error}>
+                Not vailed Email...please check your Email and try again!
+              </p>
+            )}
+          </Form>
+        </Formik>
+      </div>
     </>
   );
 }

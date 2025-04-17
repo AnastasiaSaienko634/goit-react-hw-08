@@ -3,16 +3,20 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { login } from "../../redux/auth/operations";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const handleRegisterForm = (values, actions) => {
+  const navigate = useNavigate();
+  const handleRegisterForm = (values, { resetForm }) => {
     dispatch(
       login({
         email: values.email,
         password: values.password,
       })
     );
+    navigate("/");
+    resetForm();
   };
   const authSchema = Yup.object().shape({
     email: Yup.string().min(6, "Too Short").max(50, "Too Long").required(),
@@ -30,11 +34,12 @@ export default function LoginForm() {
       >
         <Form className={css.form}>
           <label htmlFor="email" className={css.formlabel}>
+            Email
             <Field
               type="email"
               name="email"
               id="email"
-              placeholder="Email"
+              placeholder="your@email.com"
               className={css.formInput}
             ></Field>
             <ErrorMessage
@@ -43,11 +48,12 @@ export default function LoginForm() {
               className={css.schemaNumber}
             />
             <label htmlFor="password" className={css.formlabel}>
+              Password
               <Field
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Password"
+                placeholder="your password"
                 className={css.formInput}
               />
               <ErrorMessage

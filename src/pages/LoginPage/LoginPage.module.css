@@ -1,16 +1,30 @@
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 200px;
   font-size: 18px;
+  background-color: #eaf2fe;
+  width: 400px;
+  border-radius: 12px;
+  padding-bottom: 30px;
 }
 
 .icon {
   width: 29px;
   height: 29px;
   fill: #0056b3;
+}
+
+.header {
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.textlogin {
+  margin-top: 25px;
+  font-weight: 500;
+  margin-left: 30px;
+  font-family: sans-serif;
 }

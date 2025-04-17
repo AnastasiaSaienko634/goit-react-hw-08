@@ -1,12 +1,11 @@
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
+
   margin-right: auto;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 200px;
   font-size: 18px;
+  background-color: #1669f2;
 }
 
 .text {
@@ -20,5 +19,81 @@
 }
 
 .textHome {
+  font-size: 25px;
+  color: white;
+  font-weight: 300;
+  width: 300px;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.header {
+  font-size: 50px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: white;
+  width: 400px;
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 70px;
+}
+
+.buttonGetStart {
+  font-size: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
   margin-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 35px;
+  width: 170px;
+  margin-left: 100px;
+  color: white;
+  background-color: #0750d6;
+  border-color: linear-gradient(90deg, #0950c2 0%, #0048cf 100%);
+  margin-top: 50px;
+  margin-bottom: 80px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.buttonGetStart:hover {
+  background-color: #123b89;
+  border-color: #0f2f6c;
+}
+
+.boxtext {
+  color: white;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 22px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 130px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  color: black;
+  background-color: white;
+}
+
+.listbox {
+  display: flex;
+  margin-left: 100px;
+  gap: 20px;
+}
+
+.icon {
+  width: 37px;
+  height: 37px;
+  border-right: 1px solid gray;
+  padding-right: 10px;
 }

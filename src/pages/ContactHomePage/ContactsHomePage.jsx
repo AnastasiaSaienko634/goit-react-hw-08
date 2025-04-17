@@ -1,24 +1,32 @@
 import { NavLink } from "react-router-dom";
 import css from "./ContactsHomePage.module.css";
+import { RiResetRightLine } from "react-icons/ri";
+import { GrSecure } from "react-icons/gr";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 export default function ContactsHomePage() {
   return (
     <div className={css.container}>
-      <h1>Welocome to Contacts Book!</h1>
+      <h1 className={css.header}>Your Personal Contact Book</h1>
       <p className={css.textHome}>
-        Here you can easily add, view, and delete contacts.
+        Organize and access your contacts anytime, anywhere.
       </p>
-      <p className={css.textHome}>
-        Manage your contact list quickly and effortlessly — all in one place!
-      </p>
-
-      <p className={css.text}>
-        -In the <span className={css.span}>Contact List</span> section, you can
-        find a contact and also delete it if needed.
-      </p>
-      <p className={css.txet}>
-        -In the <span className={css.span}>Add New Contact</span> section, you
-        can add a new contact to your contacts list.
-      </p>
+      <NavLink to="/register" className={css.buttonGetStart}>
+        Get Started
+      </NavLink>
+      <div className={css.listbox}>
+        <p className={css.boxtext}>
+          <RiResetRightLine className={css.icon} />
+          Simple contact management
+        </p>
+        <p className={css.boxtext}>
+          <GrSecure className={css.icon} />
+          Secure could sync
+        </p>
+        <p className={css.boxtext}>
+          <FaMagnifyingGlass className={css.icon} />
+          Easy search & filtering
+        </p>
+      </div>
     </div>
   );
 }

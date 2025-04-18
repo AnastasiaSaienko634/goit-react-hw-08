@@ -9,10 +9,16 @@ export default function AppBar() {
   const isLoggedIn = useSelector(isLogged);
   return (
     <>
-      <div className={css.container}>
-        <Navigation />
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </div>
+      {isLoggedIn ? (
+        <div className={css.containerIsLogged}>
+          <Navigation /> <UserMenu />
+        </div>
+      ) : (
+        <div className={css.containerOnLogged}>
+          <Navigation />
+          <AuthNav />
+        </div>
+      )}
     </>
   );
 }

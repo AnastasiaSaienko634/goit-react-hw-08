@@ -6,15 +6,10 @@ import { AiOutlineUserDelete } from "react-icons/ai";
 export default function Contact({ name, number, handeleDeleteContact, id }) {
   return (
     <>
+      <IoPerson className={css.iconPerson} />
       <div className={css.contactInfo}>
-        <p className={css.text}>
-          <IoPerson className={css.iconPerson} />
-          {name}
-        </p>
-        <p className={css.text}>
-          <FaPhone className={css.iconPhone} />
-          {number}
-        </p>
+        <p className={css.text}>{name}</p>
+        <p className={css.text}>{number}</p>
       </div>
       <button
         onClick={() => {
@@ -22,7 +17,7 @@ export default function Contact({ name, number, handeleDeleteContact, id }) {
         }}
         className={css.buttonContact}
       >
-        Delete <AiOutlineUserDelete />
+        Delete
       </button>
     </>
   );

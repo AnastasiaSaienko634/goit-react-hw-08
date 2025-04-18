@@ -13,6 +13,10 @@ body {
   color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
-  background-color: #1669f2;
+  background: linear-gradient(to bottom right, #a8edea, #fed6e3);
+  background-repeat: no-repeat;
+  background-size: cover;
+
   padding: 0px 20px;
+  min-height: 100vh;
 }

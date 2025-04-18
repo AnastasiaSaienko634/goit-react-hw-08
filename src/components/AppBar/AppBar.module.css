@@ -1,6 +1,28 @@
 .container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px; /* Отступы между Navigation и UserMenu/AuthNav */
   margin-left: 100px;
   margin-top: 100px;
+}
+
+.containerIsLogged {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px; /* Отступы между Navigation и UserMenu/AuthNav */
+  margin-left: 100px;
+  margin-top: 80px;
+  margin-right: 200px;
+}
+
+.containerOnLogged {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Отступы между Navigation и UserMenu/AuthNav */
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-right: 200px;
 }

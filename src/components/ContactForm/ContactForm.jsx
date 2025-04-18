@@ -30,11 +30,12 @@ export default function ContactForm() {
       >
         <Form className={css.form}>
           <label htmlFor="name" className={css.formlabel}>
+            Name
             <Field
               type="text"
               name="name"
               id="name"
-              placeholder="Name"
+              placeholder="Anasatasia Saienko"
               className={css.formInput}
             />
             <ErrorMessage
@@ -44,11 +45,12 @@ export default function ContactForm() {
             />
           </label>
           <label htmlFor="number" className={css.formlabel}>
+            Number
             <Field
               type="text"
               name="number"
               id="number"
-              placeholder="Number"
+              placeholder="+380 "
               className={css.formInput}
             />
             <ErrorMessage

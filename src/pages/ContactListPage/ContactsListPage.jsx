@@ -18,9 +18,7 @@ export default function ContactListPage() {
   return (
     <>
       <div className={css.container}>
-        <h1 className={css.haeder}>
-          Your Contacts <IoMdPeople className={css.icons} />
-        </h1>
+        <h1 className={css.haeder}>Your Contacts </h1>
         <SearchBox />
         {loading && !error && (
           <p className={css.loader}>Requiest in progress...</p>

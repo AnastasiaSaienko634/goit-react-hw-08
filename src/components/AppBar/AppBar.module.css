@@ -14,7 +14,8 @@
     align-items: center;
     gap: 20px; /* Отступы между Navigation и UserMenu/AuthNav */
     margin-left: 5px;
-    margin-top: 80px;
+    margin-bottom: 70px;
+    margin-top: 50px;
     margin-right: 200px;
   }
 
@@ -23,7 +24,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px; /* Отступы между Navigation и UserMenu/AuthNav */
-    margin-top: 80px;
+    margin-top: 50px;
+    margin-bottom: 70px;
     margin-left: 5px;
     margin-right: 200px;
   }
@@ -32,10 +34,12 @@
 @media (min-width: 768px) {
   .containerOnLogged {
     margin-left: 70px;
+    margin-bottom: 0px;
   }
 
   .containerIsLogged {
     margin-left: 70px;
+    margin-bottom: 0px;
   }
 
   .container {

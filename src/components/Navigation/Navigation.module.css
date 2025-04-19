@@ -9,13 +9,12 @@
   .link {
     text-decoration: none;
     font-size: 15px;
-    color: #007bff;
+    color: #000000;
     font-weight: 600;
-    border: 2px solid #ffffff;
-    background-color: white;
+    margin-right: 50px;
     border-radius: 8px;
     text-align: center;
-    padding: 10px;
+
     width: 30px;
     transition: background-color 1s ease-in-out;
   }
@@ -58,6 +57,11 @@
     border-radius: 8px;
     padding: 8px;
     width: 90px;
+    border: 2px solid #ffffff;
+    background-color: white;
+    padding: 10px;
+    color: #007bff;
+    margin-right: 0px;
   }
 }
 

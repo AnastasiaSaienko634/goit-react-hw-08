@@ -1,121 +1,244 @@
-.container {
-  display: flex;
+@media (min-width: 120px) {
+  body {
+    font-size: 18px;
+    padding: 0 20px;
+  }
 
-  margin-right: auto;
-  flex-direction: column;
-  margin-top: 200px;
-  font-size: 18px;
+  .container {
+    display: flex;
+
+    margin-right: auto;
+    flex-direction: column;
+    margin-top: 30px;
+    font-size: 14px;
+  }
+
+  .text {
+    margin-top: 20px;
+    margin-bottom: 3px;
+  }
+
+  .span {
+    font-weight: bolder;
+    color: #007bff;
+  }
+
+  .textHome {
+    font-size: 19px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    width: 250px;
+    text-align: left;
+    margin-left: 5px;
+  }
+
+  .header {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #000000;
+    width: 250px;
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 30px;
+  }
+
+  .buttonGetStart {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 120px;
+    margin-left: 5px;
+    color: white;
+    background-color: #007bff;
+    border-color: linear-gradient(90deg, #0950c2 0%, #0048cf 100%);
+    margin-top: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .buttonBooks {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 170px;
+    margin-left: 100px;
+    color: white;
+    background-color: #0750d6;
+    border-color: linear-gradient(90deg, #0950c2 0%, #0048cf 100%);
+    margin-top: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .buttonBooks:hover {
+    background-color: #123b89;
+    border-color: #0f2f6c;
+  }
+
+  .buttonGetStart:hover {
+    background-color: #123b89;
+    border-color: #0f2f6c;
+  }
+
+  .boxtext {
+    color: white;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 90px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    color: black;
+    background-color: white;
+  }
+
+  .listbox {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 5px;
+    gap: 10px;
+  }
+
+  .icon {
+    display: none;
+  }
 }
 
-.text {
-  margin-top: 50px;
-  margin-bottom: 7px;
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .container {
+    margin-top: 100px;
+    font-size: 16px;
+  }
+  .text {
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+
+  .textHome {
+    font-size: 20px;
+
+    width: 200px;
+
+    margin-left: 70px;
+  }
+
+  .header {
+    font-size: 40px;
+
+    width: 300px;
+
+    margin-left: 70px;
+    margin-bottom: 50px;
+  }
+
+  .buttonGetStart {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 170px;
+    margin-left: 70px;
+    margin-top: 50px;
+  }
+
+  .boxtext {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 22px;
+
+    width: 210px;
+    height: 130px;
+  }
+  .listbox {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 70px;
+    gap: 5px;
+  }
+
+  .icon {
+    width: 37px;
+    height: 37px;
+    border-right: 1px solid gray;
+    padding-right: 10px;
+    display: flex;
+  }
 }
 
-.span {
-  font-weight: bolder;
-  color: #007bff;
-}
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  .text {
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
 
-.textHome {
-  font-size: 25px;
-  color: rgb(0, 0, 0);
-  font-weight: 300;
-  width: 300px;
-  text-align: left;
-  margin-left: 100px;
-}
+  .container {
+    margin-top: 200px;
+    font-size: 18px;
+  }
 
-.header {
-  font-size: 50px;
-  font-family: sans-serif;
-  font-weight: 500;
-  color: #000000;
-  width: 400px;
-  text-align: left;
-  margin-left: 100px;
-  margin-bottom: 70px;
-}
+  .text {
+    margin-top: 50px;
+    margin-bottom: 7px;
+  }
 
-.buttonGetStart {
-  font-size: 22px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 8px;
-  padding-left: 20px;
-  padding-right: 20px;
-  outline: none;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 170px;
-  margin-left: 100px;
-  color: white;
-  background-color: #007bff;
-  border-color: linear-gradient(90deg, #0950c2 0%, #0048cf 100%);
-  margin-top: 50px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  text-align: center;
-}
+  .textHome {
+    font-size: 25px;
 
-.buttonBooks {
-  font-size: 22px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 8px;
-  padding-left: 20px;
-  padding-right: 20px;
-  outline: none;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 170px;
-  margin-left: 100px;
-  color: white;
-  background-color: #0750d6;
-  border-color: linear-gradient(90deg, #0950c2 0%, #0048cf 100%);
-  margin-top: 50px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  text-align: center;
-}
+    width: 300px;
 
-.buttonBooks:hover {
-  background-color: #123b89;
-  border-color: #0f2f6c;
-}
+    margin-left: 100px;
+  }
+  .header {
+    font-size: 50px;
 
-.buttonGetStart:hover {
-  background-color: #123b89;
-  border-color: #0f2f6c;
-}
+    width: 400px;
 
-.boxtext {
-  color: white;
-  display: flex;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 35px;
-  padding-right: 35px;
-  font-size: 22px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  width: 210px;
-  height: 130px;
-  border: 1px solid gray;
-  border-radius: 8px;
-  color: black;
-  background-color: white;
-}
+    margin-left: 100px;
+    margin-bottom: 70px;
+  }
 
-.listbox {
-  display: flex;
-  margin-top: 70px;
-  margin-left: 100px;
-  gap: 20px;
-}
-
-.icon {
-  width: 37px;
-  height: 37px;
-  border-right: 1px solid gray;
-  padding-right: 10px;
+  .buttonGetStart {
+    font-size: 22px;
+    width: 170px;
+    margin-left: 100px;
+  }
+  .listbox {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 100px;
+    gap: 20px;
+  }
 }

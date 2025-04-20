@@ -11,6 +11,8 @@ import { Suspense, useEffect } from "react";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
 import { refreshUser } from "../../redux/auth/operations";
 import Layout from "./../Layout/Layout";
+import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 export default function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -21,17 +23,50 @@ export default function App() {
     <p className={css.refresher}>Getting your user data, plaese wait...</p>
   ) : (
     <>
-      <Suspense>
-        <AppBar />
-        <Routes>
-          <Route path="/" element={<ContactsHomePage />} />
-          <Route path="/contactslist" element={<ContactsListPage />} />
-          <Route path="/addcontact" element={<AddContactPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<ContactsHomePage />} />
-        </Routes>
-      </Suspense>
+      <Layout>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<ContactsHomePage />} />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  component={<LoginPage />}
+                  redirectTo="/contactslist"
+                />
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  component={<RegisterPage />}
+                  redirectTo="/contactslist"
+                />
+              }
+            />
+            <Route
+              path="/contactslist"
+              element={
+                <PrivateRoute
+                  component={<ContactsListPage />}
+                  redirectTo="/login"
+                />
+              }
+            />
+            <Route
+              path="/addcontact"
+              element={
+                <PrivateRoute
+                  component={<AddContactPage />}
+                  redirectTo="/login"
+                />
+              }
+            />
+            <Route path="*" element={<ContactsHomePage />} />
+          </Routes>
+        </Suspense>
+      </Layout>
     </>
   );
 }

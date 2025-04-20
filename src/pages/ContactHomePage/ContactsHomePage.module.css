@@ -170,6 +170,10 @@
     font-weight: 500;
   }
 
+  .buttonBooks {
+    margin-left: 70px;
+  }
+
   .boxtext {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -242,5 +246,9 @@
     margin-top: 100px;
     margin-left: 100px;
     gap: 20px;
+  }
+
+  .buttonBooks {
+    margin-left: 100px;
   }
 }

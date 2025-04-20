@@ -4,10 +4,8 @@ import * as Yup from "yup";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { register } from "../../redux/auth/operations";
 import { error } from "../../redux/auth/selectors";
-import { useNavigate } from "react-router-dom";
 
 export default function RegisterForm() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const isError = useSelector(error);
   const handleRegisterForm = (values, { resetForm }) => {
@@ -18,7 +16,7 @@ export default function RegisterForm() {
         password: values.password,
       })
     );
-    navigate("/");
+
     resetForm();
   };
   const authSchema = Yup.object().shape({

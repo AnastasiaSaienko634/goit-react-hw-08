@@ -3,11 +3,10 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { login } from "../../redux/auth/operations";
-import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const handleRegisterForm = (values, { resetForm }) => {
     dispatch(
       login({
@@ -15,7 +14,7 @@ export default function LoginForm() {
         password: values.password,
       })
     );
-    navigate("/");
+
     resetForm();
   };
   const authSchema = Yup.object().shape({

@@ -5,6 +5,7 @@ import { GrSecure } from "react-icons/gr";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { isLogged } from "../../redux/auth/selectors";
+
 export default function ContactsHomePage() {
   const isLoggedIn = useSelector(isLogged);
   return (
